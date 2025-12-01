@@ -45,6 +45,13 @@ export function HexTile({ value, q, r, merged }: HexTileProps) {
   const centerX = 400
   const centerY = 400
   const offset = -tileRadius
+  const tileSize = tileRadius * 2
+
+  // Calculate font size based on tile size and number of digits
+  const digitCount = value.toString().length
+  // Base font size is ~40% of tile size, adjusted for digit count
+  const baseFontSize = tileSize * 0.4
+  const fontSize = baseFontSize / Math.max(1, digitCount * 0.7)
 
   // Calculate hexagon points for clip-path (pointy-top, centered at 50%, 50%)
   // For a hexagon in a square: center (50%, 50%) + radius offset
@@ -71,8 +78,9 @@ export function HexTile({ value, q, r, merged }: HexTileProps) {
         backgroundColor: getValueColor(value),
         color: getTextColor(value),
         clipPath: clipPath,
-        width: `${tileRadius * 2}px`,
-        height: `${tileRadius * 2}px`,
+        width: `${tileSize}px`,
+        height: `${tileSize}px`,
+        fontSize: `${fontSize}px`,
       }}
     >
       {value}
