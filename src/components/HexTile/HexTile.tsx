@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import type { Tile } from '../../types'
 import { hexToPixel } from '../../logic/utils'
 import './HexTile.css'
 
@@ -12,7 +11,7 @@ interface HexTileProps {
   radius: number
 }
 
-export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
+export function HexTile({ value, q, r, merged }: HexTileProps) {
   const [isAnimating, setIsAnimating] = useState(false)
   const [pixelPos, setPixelPos] = useState(() => hexToPixel(q, r, 50))
 

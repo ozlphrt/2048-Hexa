@@ -18,8 +18,7 @@ export function getEmptyCells(
 
 export function sortTilesForDirection(
   tiles: Tile[],
-  direction: Direction,
-  radius: number
+  direction: Direction
 ): Tile[] {
   const [dq, dr] = getDirectionVector(direction)
   return [...tiles].sort((a, b) => {
@@ -41,7 +40,7 @@ export function canMove(
   direction: Direction,
   radius: number
 ): boolean {
-  const sortedTiles = sortTilesForDirection(tiles, direction, radius)
+  const sortedTiles = sortTilesForDirection(tiles, direction)
   const occupied = new Map<string, Tile>()
   tiles.forEach(t => {
     occupied.set(getCellKey(t.q, t.r), t)

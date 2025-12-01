@@ -114,7 +114,7 @@ export function HexGrid({ cells, tiles, onSwipe, radius }: HexGridProps) {
       onTouchEnd={handleTouchEnd}
     >
       <svg className="hex-grid-bg" width="800" height="800" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
-        {cells.map((cell, idx) => {
+        {cells.map((cell) => {
           const hexSize = 50
           const [px, py] = hexToPixel(cell.q, cell.r, hexSize)
           const x = centerX + px

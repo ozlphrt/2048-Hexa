@@ -1,6 +1,6 @@
 import type { Tile, Direction } from '../types'
 import { getDirectionVector, isValidCell, getCellKey } from './utils'
-import { getTileAt, sortTilesForDirection } from './board'
+import { sortTilesForDirection } from './board'
 
 export interface MoveResult {
   tiles: Tile[]
@@ -13,7 +13,7 @@ export function moveTiles(
   direction: Direction,
   radius: number
 ): MoveResult {
-  const sortedTiles = sortTilesForDirection(tiles, direction, radius)
+  const sortedTiles = sortTilesForDirection(tiles, direction)
   const [dq, dr] = getDirectionVector(direction)
   const occupied = new Map<string, Tile>()
   const newTiles: Tile[] = []
