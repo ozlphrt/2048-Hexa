@@ -1,0 +1,34 @@
+.hex-tile {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  z-index: 10;
+  user-select: none;
+  box-sizing: border-box;
+  border: 1px solid rgba(120, 110, 100, 0.3);
+}
+
+.hex-tile.animating {
+  transition: left 0.2s ease-out, top 0.2s ease-out;
+}
+
+.hex-tile.merged {
+  animation: pop 0.2s ease-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

@@ -1,0 +1,33 @@
+.app {
+  min-height: 100vh;
+  background: #9a8a76;
+  padding: 20px 0;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-header h1 {
+  color: #776e65;
+  font-size: 64px;
+  margin: 0;
+  font-weight: bold;
+  width: 100%;
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 20px;
+  color: #776e65;
+  font-size: 14px;
+}
+
+.instructions p {
+  margin: 4px 0;
+}
+

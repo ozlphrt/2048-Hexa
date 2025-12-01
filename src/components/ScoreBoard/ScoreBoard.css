@@ -1,0 +1,67 @@
+.score-board {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.score-box,
+.radius-box {
+  background: #bbada0;
+  border-radius: 6px;
+  padding: 8px 16px;
+  min-width: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.radius-box {
+  position: relative;
+}
+
+.score-label,
+.radius-label {
+  color: #eee4da;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.score-value,
+.radius-value {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.radius-value {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0;
+}
+
+.radius-value:focus {
+  outline: none;
+}
+
+.radius-box::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  color: #ffffff;
+  font-size: 10px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
