@@ -21,6 +21,7 @@ export function spawnTile(
     q: randomCell.q,
     r: randomCell.r,
     merged: false,
+    spawned: true,
   }
 }
 

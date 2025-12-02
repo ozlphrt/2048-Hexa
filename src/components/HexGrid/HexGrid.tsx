@@ -153,6 +153,7 @@ export function HexGrid({ cells, tiles, onSwipe, radius }: HexGridProps) {
             q={tile.q}
             r={tile.r}
             merged={tile.merged}
+            spawned={tile.spawned}
             id={tile.id}
             radius={radius}
           />

@@ -6,6 +6,7 @@ export interface Tile {
   q: number
   r: number
   merged: boolean
+  spawned?: boolean
 }
 
 export interface HexCell {

@@ -89,10 +89,9 @@ export function moveTiles(
     }
   }
 
-  // Clear merged flags for next move
-  newTiles.forEach(t => {
-    t.merged = false
-  })
+  // Don't clear merged flags here - let React components handle the animation
+  // The merged flag will be cleared on the next move when tiles are processed again
+  // This allows the animation to play before the flag is reset
 
   return {
     tiles: newTiles,

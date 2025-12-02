@@ -7,14 +7,16 @@ interface HexTileProps {
   q: number
   r: number
   merged: boolean
+  spawned?: boolean
   id: string
   radius: number
 }
 
-export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
+export function HexTile({ value, q, r, merged, spawned, radius }: HexTileProps) {
   const hexSize = radius === 2 ? 80 : 50
   const [isAnimating, setIsAnimating] = useState(false)
   const [isMerging, setIsMerging] = useState(false)
+  const [isSpawning, setIsSpawning] = useState(false)
   const [pixelPos, setPixelPos] = useState(() => hexToPixel(q, r, hexSize))
 
   useEffect(() => {
@@ -28,10 +30,22 @@ export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
   useEffect(() => {
     if (merged) {
       setIsMerging(true)
-      const timer = setTimeout(() => setIsMerging(false), 400)
+      const timer = setTimeout(() => setIsMerging(false), 350) // Match animation duration
       return () => clearTimeout(timer)
+    } else {
+      setIsMerging(false)
     }
   }, [merged])
+
+  useEffect(() => {
+    if (spawned) {
+      setIsSpawning(true)
+      const timer = setTimeout(() => setIsSpawning(false), 800) // Match animation duration
+      return () => clearTimeout(timer)
+    } else {
+      setIsSpawning(false)
+    }
+  }, [spawned])
 
   const getValueColor = (val: number): string => {
     if (val >= 2048) return '#f9f6f2'
@@ -89,7 +103,7 @@ export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
 
   return (
     <div
-      className={`hex-tile ${isAnimating ? 'animating' : ''} ${isMerging ? 'merged' : ''}`}
+      className={`hex-tile ${isAnimating ? 'animating' : ''} ${isMerging ? 'merged' : ''} ${isSpawning ? 'spawned' : ''}`}
       style={{
         left: `${tileX}px`,
         top: `${tileY}px`,
@@ -101,7 +115,7 @@ export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
         fontSize: `${fontSize}px`,
       }}
     >
-      {value}
+      <span className="tile-value">{value}</span>
     </div>
   )
 }

@@ -34,5 +34,6 @@
   width: 800px;
   height: 800px;
   pointer-events: none;
+  overflow: hidden;
 }
 

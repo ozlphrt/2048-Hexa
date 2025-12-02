@@ -53,6 +53,7 @@ function createInitialTiles(validCells: Array<{ q: number; r: number }>): Tile[]
       q: cell.q,
       r: cell.r,
       merged: false,
+      spawned: true,
     })
   }
   
@@ -139,6 +140,14 @@ export const useGameStore = create<GameStore>((set, get) => ({
     if (newBest > state.best) {
       saveBest(newBest)
     }
+
+    // Clear merged and spawned flags after state update (allows animation to play first)
+    setTimeout(() => {
+      const currentState = get()
+      set({
+        tiles: currentState.tiles.map(t => ({ ...t, merged: false, spawned: false }))
+      })
+    }, 350) // Clear after animation completes (0.35s)
 
     set({
       tiles: newTiles,
