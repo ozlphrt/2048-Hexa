@@ -12,6 +12,7 @@ interface GameStore extends GameState {
   history: GameState[]
   gameOver: boolean
   won: boolean
+  winModalShown: boolean
   setRadius: (radius: number) => void
   move: (direction: Direction) => void
   undo: () => void
@@ -70,6 +71,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
   history: [],
   gameOver: false,
   won: false,
+  winModalShown: false,
 
   setRadius: (radius: number) => {
     const validCells = generateValidCells(radius)
@@ -82,6 +84,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       history: [],
       gameOver: false,
       won: false,
+      winModalShown: false,
     })
   },
 
@@ -120,8 +123,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
       newTiles = [...newTiles, newTile]
     }
 
-    // Check win condition
-    const won = newTiles.some(t => t.value >= 2048) && !state.won
+    // Check win condition - only show modal once per game session
+    const has2048 = newTiles.some(t => t.value >= 2048)
+    const won = has2048 && !state.winModalShown
 
     // Check game over
     const emptyCells = state.validCells.filter(
@@ -141,6 +145,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       score: newScore,
       best: newBest,
       won,
+      winModalShown: won ? true : state.winModalShown,
       gameOver,
     })
   },
@@ -167,6 +172,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       history: [],
       gameOver: false,
       won: false,
+      winModalShown: false,
     })
   },
 

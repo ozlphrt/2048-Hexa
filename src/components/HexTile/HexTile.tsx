@@ -38,6 +38,8 @@ export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
   }
 
   const getTextColor = (val: number): string => {
+    // For 2048+, use dark text since background is light (#f9f6f2)
+    if (val >= 2048) return '#776e65'
     return val >= 8 ? '#f9f6f2' : '#776e65'
   }
   const tileRadius = hexSize * 0.85 // Slightly smaller than cell for visual spacing
