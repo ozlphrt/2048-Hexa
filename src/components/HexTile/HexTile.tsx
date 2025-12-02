@@ -48,7 +48,11 @@ export function HexTile({ value, q, r, merged, spawned, radius }: HexTileProps) 
   }, [spawned])
 
   const getValueColor = (val: number): string => {
-    if (val >= 2048) return '#f9f6f2'
+    if (val >= 32768) return '#b8a898'
+    if (val >= 16384) return '#c8b8a8'
+    if (val >= 8192) return '#d8c8b8'
+    if (val >= 4096) return '#e8d4b8'
+    if (val >= 2048) return '#f0d4a0'
     if (val >= 1024) return '#edc22e'
     if (val >= 512) return '#edc850'
     if (val >= 256) return '#edcc61'
@@ -57,12 +61,15 @@ export function HexTile({ value, q, r, merged, spawned, radius }: HexTileProps) 
     if (val >= 32) return '#f67c5f'
     if (val >= 16) return '#f59563'
     if (val >= 8) return '#f2b179'
-    return '#eee4da'
+    if (val >= 4) return '#eee4da'
+    return '#cdc1b4'
   }
 
   const getTextColor = (val: number): string => {
-    // For 2048+, use dark text since background is light (#f9f6f2)
-    if (val >= 2048) return '#776e65'
+    // For 2048-8192, use dark text since background is light cream/beige
+    if (val >= 2048 && val < 16384) return '#776e65'
+    // For 16384+, use light text since background is darker gray-beige
+    if (val >= 16384) return '#f9f6f2'
     return val >= 8 ? '#f9f6f2' : '#776e65'
   }
   const tileRadius = hexSize * 0.85 // Slightly smaller than cell for visual spacing

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex 2048 - Tile Samples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #9a8a76;
+            padding: 40px 20px;
+            color: #f9f6f2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #776e65;
+            margin-bottom: 10px;
+            font-size: 48px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #eee4da;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .tiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+        
+        .tile-sample {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .tile-label {
+            color: #776e65;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .hex-tile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            width: 120px;
+            height: 120px;
+            box-sizing: border-box;
+            border: 1px solid rgba(120, 110, 100, 0.3);
+            line-height: 1;
+            overflow: hidden;
+            transform-origin: center center;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .tile-value {
+            display: inline-block;
+            font-size: 36px;
+        }
+        
+        /* Color functions matching the game */
+        .tile-2 { background-color: #cdc1b4; color: #776e65; }
+        .tile-4 { background-color: #eee4da; color: #776e65; }
+        .tile-8 { background-color: #f2b179; color: #f9f6f2; }
+        .tile-16 { background-color: #f59563; color: #f9f6f2; }
+        .tile-32 { background-color: #f67c5f; color: #f9f6f2; }
+        .tile-64 { background-color: #f65e3b; color: #f9f6f2; }
+        .tile-128 { background-color: #edcf72; color: #f9f6f2; }
+        .tile-256 { background-color: #edcc61; color: #f9f6f2; }
+        .tile-512 { background-color: #edc850; color: #f9f6f2; }
+        .tile-1024 { background-color: #edc22e; color: #f9f6f2; }
+        .tile-2048 { background-color: #f0d4a0; color: #776e65; }
+        .tile-4096 { background-color: #e8d4b8; color: #776e65; }
+        .tile-8192 { background-color: #d8c8b8; color: #776e65; }
+        .tile-16384 { background-color: #c8b8a8; color: #f9f6f2; }
+        .tile-32768 { background-color: #b8a898; color: #f9f6f2; }
+        
+        .info {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(238, 228, 218, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            color: #eee4da;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hex 2048 - Tile Samples</h1>
+        <p class="subtitle">All tile values and their colors</p>
+        
+        <div class="tiles-grid">
+            <div class="tile-sample">
+                <div class="tile-label">2</div>
+                <div class="hex-tile tile-2">
+                    <span class="tile-value">2</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">4</div>
+                <div class="hex-tile tile-4">
+                    <span class="tile-value">4</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">8</div>
+                <div class="hex-tile tile-8">
+                    <span class="tile-value">8</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">16</div>
+                <div class="hex-tile tile-16">
+                    <span class="tile-value">16</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">32</div>
+                <div class="hex-tile tile-32">
+                    <span class="tile-value">32</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">64</div>
+                <div class="hex-tile tile-64">
+                    <span class="tile-value">64</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">128</div>
+                <div class="hex-tile tile-128">
+                    <span class="tile-value">128</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">256</div>
+                <div class="hex-tile tile-256">
+                    <span class="tile-value">256</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">512</div>
+                <div class="hex-tile tile-512">
+                    <span class="tile-value">512</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">1024</div>
+                <div class="hex-tile tile-1024">
+                    <span class="tile-value">1024</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">2048</div>
+                <div class="hex-tile tile-2048">
+                    <span class="tile-value">2048</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">4096</div>
+                <div class="hex-tile tile-4096">
+                    <span class="tile-value">4096</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">8192</div>
+                <div class="hex-tile tile-8192">
+                    <span class="tile-value">8192</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">16384</div>
+                <div class="hex-tile tile-16384">
+                    <span class="tile-value">16384</span>
+                </div>
+            </div>
+            
+            <div class="tile-sample">
+                <div class="tile-label">32768</div>
+                <div class="hex-tile tile-32768">
+                    <span class="tile-value">32768</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <strong>Note:</strong> Tiles 2048 and above use light background (#f9f6f2) with dark text (#776e65) for better visibility.
+            All other tiles use the standard color scheme with light text on colored backgrounds.
+        </div>
+    </div>
+</body>
+</html>
+
