@@ -19,7 +19,7 @@ interface GameStore extends GameState {
   saveBest: () => void
 }
 
-const DEFAULT_RADIUS = 3
+const DEFAULT_RADIUS = 2
 
 function loadBest(): number {
   if (typeof window === 'undefined') return 0

@@ -11,17 +11,18 @@ interface HexTileProps {
   radius: number
 }
 
-export function HexTile({ value, q, r, merged }: HexTileProps) {
+export function HexTile({ value, q, r, merged, radius }: HexTileProps) {
+  const hexSize = radius === 2 ? 80 : 50
   const [isAnimating, setIsAnimating] = useState(false)
-  const [pixelPos, setPixelPos] = useState(() => hexToPixel(q, r, 50))
+  const [pixelPos, setPixelPos] = useState(() => hexToPixel(q, r, hexSize))
 
   useEffect(() => {
     setIsAnimating(true)
-    const newPos = hexToPixel(q, r, 50)
+    const newPos = hexToPixel(q, r, hexSize)
     setPixelPos(newPos)
     const timer = setTimeout(() => setIsAnimating(false), 200)
     return () => clearTimeout(timer)
-  }, [q, r])
+  }, [q, r, hexSize])
 
   const getValueColor = (val: number): string => {
     if (val >= 2048) return '#f9f6f2'
@@ -39,8 +40,6 @@ export function HexTile({ value, q, r, merged }: HexTileProps) {
   const getTextColor = (val: number): string => {
     return val >= 8 ? '#f9f6f2' : '#776e65'
   }
-
-  const hexSize = 50
   const tileRadius = hexSize * 0.85 // Slightly smaller than cell for visual spacing
   const centerX = 400
   const centerY = 400
@@ -49,9 +48,17 @@ export function HexTile({ value, q, r, merged }: HexTileProps) {
 
   // Calculate font size based on tile size and number of digits
   const digitCount = value.toString().length
-  // Base font size is ~40% of tile size, adjusted for digit count
-  const baseFontSize = tileSize * 0.4
-  const fontSize = baseFontSize / Math.max(1, digitCount * 0.7)
+  // Larger font sizes for better visibility
+  let fontSize
+  if (digitCount === 1) {
+    fontSize = tileSize * 0.5
+  } else if (digitCount === 2) {
+    fontSize = tileSize * 0.42
+  } else if (digitCount === 3) {
+    fontSize = tileSize * 0.35
+  } else {
+    fontSize = tileSize * 0.28
+  }
 
   // Calculate hexagon points for clip-path (pointy-top, centered at 50%, 50%)
   // For a hexagon in a square: center (50%, 50%) + radius offset

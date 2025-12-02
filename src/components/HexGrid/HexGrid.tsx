@@ -115,18 +115,18 @@ export function HexGrid({ cells, tiles, onSwipe, radius }: HexGridProps) {
     >
       <svg className="hex-grid-bg" width="800" height="800" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
         {cells.map((cell) => {
-          const hexSize = 50
+          const hexSize = radius === 2 ? 80 : 50
           const [px, py] = hexToPixel(cell.q, cell.r, hexSize)
           const x = centerX + px
           const y = centerY + py
-          const radius = hexSize
+          const hexRadius = hexSize
 
           // Pointy-top hexagon: start at top (π/2) and rotate
           const points = []
           for (let i = 0; i < 6; i++) {
             const angle = (Math.PI / 3) * i - Math.PI / 6
             points.push(
-              `${x + radius * Math.cos(angle)},${y + radius * Math.sin(angle)}`
+              `${x + hexRadius * Math.cos(angle)},${y + hexRadius * Math.sin(angle)}`
             )
           }
 
