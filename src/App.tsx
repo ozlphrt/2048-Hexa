@@ -33,7 +33,7 @@ function App() {
       <div className="app-header">
         <h1>Hex 2048</h1>
       </div>
-      <ScoreBoard score={score} best={best} radius={radius} onRadiusChange={setRadius} />
+      <ScoreBoard score={score} best={best} />
       <HexGrid cells={cells} tiles={tiles} onSwipe={handleSwipe} radius={radius} />
       <Controls onUndo={undo} onRestart={restart} />
       {won && <ModalWin onContinue={continueGame} onRestart={restart} />}

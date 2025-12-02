@@ -3,11 +3,9 @@ import './ScoreBoard.css'
 interface ScoreBoardProps {
   score: number
   best: number
-  radius: number
-  onRadiusChange: (radius: number) => void
 }
 
-export function ScoreBoard({ score, best, radius, onRadiusChange }: ScoreBoardProps) {
+export function ScoreBoard({ score, best }: ScoreBoardProps) {
   return (
     <div className="score-board">
       <div className="score-box">
