@@ -25,3 +25,13 @@
   transform: scale(0.98);
 }
 
+.sound-toggle {
+  padding: 12px 16px;
+  font-size: 20px;
+  min-width: 50px;
+}
+
+.sound-toggle.sound-off {
+  opacity: 0.6;
+}
+

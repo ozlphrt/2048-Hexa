@@ -4,6 +4,7 @@ import { generateValidCells } from '../logic/utils'
 import { moveTiles } from '../logic/merge'
 import { spawnTile } from '../logic/spawn'
 import { canMove } from '../logic/board'
+import { soundManager } from '../utils/sounds'
 
 interface GameStore extends GameState {
   radius: number
@@ -107,6 +108,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
     let newTiles = result.tiles
     let newScore = state.score + result.scoreDelta
     let newBest = Math.max(state.best, newScore)
+
+    // Play merge sound if tiles merged
+    if (result.scoreDelta > 0) {
+      soundManager.playMerge()
+    }
 
     // Spawn new tile
     const newTile = spawnTile(newTiles, state.validCells)
