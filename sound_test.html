@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex 2048 - Sound Effects Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #9a8a76;
+            color: #f9f6f2;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #776e65;
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #eee4da;
+            font-size: 14px;
+        }
+        
+        .section {
+            background: rgba(238, 228, 218, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #f9f6f2;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(238, 228, 218, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .sound-item {
+            background: rgba(187, 173, 160, 0.3);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .sound-item audio {
+            flex: 1;
+        }
+        
+        .sound-label {
+            min-width: 200px;
+            font-weight: 500;
+            color: #f9f6f2;
+        }
+        
+        .source-link {
+            font-size: 11px;
+            color: #eee4da;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        
+        .notes {
+            background: rgba(238, 228, 218, 0.15);
+            border-left: 3px solid #f65e3b;
+            padding: 10px 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #eee4da;
+        }
+        
+        .play-btn {
+            background: #f65e3b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .play-btn:hover {
+            background: #f67c5f;
+        }
+        
+        .play-btn:active {
+            background: #f59563;
+        }
+        
+        a[download] {
+            color: #f9f6f2;
+            text-decoration: underline;
+            margin: 0 5px;
+        }
+        
+        a[download]:hover {
+            color: #edc22e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Hex 2048 - Sound Effects Test</h1>
+        <p class="subtitle">Test and choose sounds for sliding tiles and merging tiles</p>
+        
+        <div class="section">
+            <h2>🔊 Sliding Tile Sounds (Subtle)</h2>
+            
+            <div class="sound-item">
+                <span class="sound-label">1. Magic Sparkle Whoosh</span>
+                <audio id="slide1" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-magic-sparkle-whoosh-260.mp3" type="audio/mpeg">
+                    <source src="sounds/slide1.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('slide1')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-magic-sparkle-whoosh-260.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">2. Fairy Arcade Sparkle</span>
+                <audio id="slide2" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-fairy-arcade-sparkle-342.mp3" type="audio/mpeg">
+                    <source src="sounds/slide2.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('slide2')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-fairy-arcade-sparkle-342.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">3. Quick Win Notification</span>
+                <audio id="slide3" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-quick-win-video-game-notification-269.mp3" type="audio/mpeg">
+                    <source src="sounds/slide3.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('slide3')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-quick-win-video-game-notification-269.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">4. Retro Game Notification</span>
+                <audio id="slide4" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-retro-game-notification-212.mp3" type="audio/mpeg">
+                    <source src="sounds/slide4.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('slide4')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-retro-game-notification-212.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">5. Game Ball Tap</span>
+                <audio id="slide5" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-game-ball-tap-2073.mp3" type="audio/mpeg">
+                    <source src="sounds/slide5.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('slide5')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-game-ball-tap-2073.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">6. Arcade Game Jump Coin</span>
+                <audio id="slide6" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-arcade-game-jump-coin-216.mp3" type="audio/mpeg">
+                    <source src="sounds/slide6.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('slide6')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-arcade-game-jump-coin-216.mp3" download class="source-link">Download</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💥 Merging/Collision Tile Sounds</h2>
+            
+            <div class="sound-item">
+                <span class="sound-label">1. Winning a Coin</span>
+                <audio id="merge1" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-winning-a-coin-video-game-2069.mp3" type="audio/mpeg">
+                    <source src="sounds/merge1.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('merge1')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-winning-a-coin-video-game-2069.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">2. Video Game Treasure</span>
+                <audio id="merge2" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-video-game-treasure-2066.mp3" type="audio/mpeg">
+                    <source src="sounds/merge2.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('merge2')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-video-game-treasure-2066.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">3. Unlock Game Notification</span>
+                <audio id="merge3" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-unlock-game-notification-253.mp3" type="audio/mpeg">
+                    <source src="sounds/merge3.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('merge3')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-unlock-game-notification-253.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">4. Retro Arcade Casino Notification</span>
+                <audio id="merge4" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-retro-arcade-casino-notification-211.mp3" type="audio/mpeg">
+                    <source src="sounds/merge4.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('merge4')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-retro-arcade-casino-notification-211.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">5. Game Level Completed</span>
+                <audio id="merge5" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-game-level-completed-2059.mp3" type="audio/mpeg">
+                    <source src="sounds/merge5.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('merge5')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-game-level-completed-2059.mp3" download class="source-link">Download</a>
+            </div>
+            
+            <div class="sound-item">
+                <span class="sound-label">6. Game Notification Wave Alarm</span>
+                <audio id="merge6" preload="auto">
+                    <source src="https://assets.mixkit.co/sfx/download/mixkit-game-notification-wave-alarm-266.mp3" type="audio/mpeg">
+                    <source src="sounds/merge6.mp3" type="audio/mpeg">
+                </audio>
+                <button class="play-btn" onclick="playSound('merge6')">▶ Play</button>
+                <a href="https://assets.mixkit.co/sfx/download/mixkit-game-notification-wave-alarm-266.mp3" download class="source-link">Download</a>
+            </div>
+        </div>
+        
+        <div class="notes">
+            <strong>📝 Instructions:</strong><br>
+            • If sounds don't play, click the "Download" link to get the file from Mixkit<br>
+            • Create a "sounds" folder next to this HTML file<br>
+            • Download your chosen sounds and rename them (e.g., slide1.mp3, merge1.mp3)<br>
+            • Refresh this page - local files will play automatically<br>
+            • All sounds are from Mixkit (free, no attribution required)<br>
+            • Choose one for sliding and one for merging
+        </div>
+        
+        <div class="notes" style="border-left-color: #edc22e; margin-top: 15px;">
+            <strong>🔗 Direct Download Links:</strong><br>
+            <strong>Sliding:</strong><br>
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-magic-sparkle-whoosh-260.mp3" download style="color: #f9f6f2;">Whoosh</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-fairy-arcade-sparkle-342.mp3" download style="color: #f9f6f2;">Sparkle</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-quick-win-video-game-notification-269.mp3" download style="color: #f9f6f2;">Quick Win</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-retro-game-notification-212.mp3" download style="color: #f9f6f2;">Retro</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-game-ball-tap-2073.mp3" download style="color: #f9f6f2;">Ball Tap</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-arcade-game-jump-coin-216.mp3" download style="color: #f9f6f2;">Jump Coin</a><br>
+            <strong>Merging:</strong><br>
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-winning-a-coin-video-game-2069.mp3" download style="color: #f9f6f2;">Coin</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-video-game-treasure-2066.mp3" download style="color: #f9f6f2;">Treasure</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-unlock-game-notification-253.mp3" download style="color: #f9f6f2;">Unlock</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-retro-arcade-casino-notification-211.mp3" download style="color: #f9f6f2;">Casino</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-game-level-completed-2059.mp3" download style="color: #f9f6f2;">Level Complete</a> | 
+            <a href="https://assets.mixkit.co/sfx/download/mixkit-game-notification-wave-alarm-266.mp3" download style="color: #f9f6f2;">Wave Alarm</a>
+        </div>
+    </div>
+    
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            if (audio) {
+                audio.currentTime = 0;
+                audio.play().catch(err => {
+                    console.error('Error playing sound:', err);
+                    alert('Could not play sound. Try downloading it first or check browser permissions.');
+                });
+            }
+        }
+        
+        // Stop all sounds when a new one plays
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('play', function() {
+                document.querySelectorAll('audio').forEach(other => {
+                    if (other !== this && !other.paused) {
+                        other.pause();
+                        other.currentTime = 0;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

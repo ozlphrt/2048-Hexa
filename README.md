@@ -48,3 +48,4 @@ npm run build
 5. Reach 2048 to win!
 6. Game over when no moves are possible
 
+

@@ -20,3 +20,4 @@ export function ModalGameOver({ onRestart }: ModalGameOverProps) {
   )
 }
 
+

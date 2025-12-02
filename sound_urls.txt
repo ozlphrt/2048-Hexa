@@ -1,0 +1,52 @@
+SLIDING TILE SOUNDS (Subtle):
+================================
+
+1. Magic Sparkle Whoosh
+   https://assets.mixkit.co/sfx/download/mixkit-magic-sparkle-whoosh-260.mp3
+
+2. Fairy Arcade Sparkle
+   https://assets.mixkit.co/sfx/download/mixkit-fairy-arcade-sparkle-342.mp3
+
+3. Quick Win Notification
+   https://assets.mixkit.co/sfx/download/mixkit-quick-win-video-game-notification-269.mp3
+
+4. Retro Game Notification
+   https://assets.mixkit.co/sfx/download/mixkit-retro-game-notification-212.mp3
+
+5. Game Ball Tap
+   https://assets.mixkit.co/sfx/download/mixkit-game-ball-tap-2073.mp3
+
+6. Arcade Game Jump Coin
+   https://assets.mixkit.co/sfx/download/mixkit-arcade-game-jump-coin-216.mp3
+
+
+MERGING/COLLISION TILE SOUNDS:
+==============================
+
+1. Winning a Coin
+   https://assets.mixkit.co/sfx/download/mixkit-winning-a-coin-video-game-2069.mp3
+
+2. Video Game Treasure
+   https://assets.mixkit.co/sfx/download/mixkit-video-game-treasure-2066.mp3
+
+3. Unlock Game Notification
+   https://assets.mixkit.co/sfx/download/mixkit-unlock-game-notification-253.mp3
+
+4. Retro Arcade Casino Notification
+   https://assets.mixkit.co/sfx/download/mixkit-retro-arcade-casino-notification-211.mp3
+
+5. Game Level Completed
+   https://assets.mixkit.co/sfx/download/mixkit-game-level-completed-2059.mp3
+
+6. Game Notification Wave Alarm
+   https://assets.mixkit.co/sfx/download/mixkit-game-notification-wave-alarm-266.mp3
+
+
+INSTRUCTIONS:
+=============
+- Click any URL above to play/download the sound
+- Right-click and "Save As" to download
+- All sounds are free from Mixkit (no attribution required)
+- Test in your browser or download to test locally
+
+

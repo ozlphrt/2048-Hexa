@@ -24,3 +24,4 @@ export function ModalWin({ onContinue, onRestart }: ModalWinProps) {
   )
 }
 
+

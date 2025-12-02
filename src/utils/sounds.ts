@@ -11,8 +11,7 @@ class SoundManager {
     }
 
     // Initialize merge sound (lock sound for merging)
-    // Public folder files: in dev at /, in prod at /2048-Hexa/
-    // Use base path for production (works in dev too with proper base config)
+    // Public folder files: always use base path /2048-Hexa/
     this.mergeSound = new Audio('/2048-Hexa/mixkit-quick-lock-sound-2854.wav')
     this.mergeSound.volume = 0.3 // Keep it subtle
     this.mergeSound.preload = 'auto'
